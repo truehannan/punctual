@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "node -e \"const f=require('fs');f.existsSync('.dev.vars')||f.copyFileSync('.dev.vars.example','.dev.vars')\" && wrangler dev",
     "deploy": "wrangler deploy",
-    "migrate": "wrangler d1 migrations apply punctual",
+    "migrate": "wrangler d1 migrations apply punctual --remote",
     "migrate:local": "wrangler d1 migrations apply punctual --local",
     "test": "vitest run",
     "test:core": "vitest run test/core",
