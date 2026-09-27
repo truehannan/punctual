@@ -36,7 +36,7 @@ enabled = true
 [[d1_databases]]
 binding = "DB"
 database_name = "punctual"
-database_id = "<the id `wrangler d1 create punctual` printed>"
+database_id = ""
 migrations_dir = "migrations"
 
 # freeBusy cache (ADR-0006 §1) AND rendered OG card PNGs — two key
@@ -46,7 +46,7 @@ migrations_dir = "migrations"
 # writes users check immediately.
 [[kv_namespaces]]
 binding = "CACHE"
-id = "<the id `wrangler kv namespace create CACHE` printed>"
+id = "d3b6d1d451ae44cf80c894e40c61aa00"
 
 # User-uploaded, durable content — host avatars and team logos.
 # Deliberately its own bucket, not the CACHE namespace above: that KV
@@ -95,20 +95,20 @@ crons = ["*/5 * * * *"]
 [vars]
 # Your Worker's public origin — the URL `wrangler deploy` prints, or your
 # custom domain. Used in every link the engine writes into emails and .ics.
-BASE_URL = "https://punctual.YOUR-SUBDOMAIN.workers.dev"
+BASE_URL = "https://punctual.truehannan.workers.dev"
 BRAND_NAME = "Punctual"
 # Optional: the legal entity named on /privacy and /terms (defaults to
 # BRAND_NAME), and a live booking page to embed on your landing page.
 #LEGAL_OPERATOR = "Your Company Ltd"
 #DEMO_BOOKING_PATH = "/you/30min"
-FROM_EMAIL = "scheduling@your-domain.example"
+FROM_EMAIL = "onboarding@resend.dev"
 FROM_NAME = "Punctual"
 # Optional: name the email sender instead of inferring it from what is set
 # (RESEND_API_KEY, then BREVO_API_KEY, then the [[send_email]] binding, else
 # the console). Named, a missing key or binding is reported on /health and
 # the dashboard rather than quietly falling back to another sender.
 #EMAIL_PROVIDER = "cloudflare"   # cloudflare | resend | brevo | console
-SUPPORT_EMAIL = "you@your-domain.example"
+SUPPORT_EMAIL = "hannanofx@gmail.com"
 # Off unless explicitly enabled (ADR-0006 §5).
 TELEMETRY_ENABLED = "0"
 
